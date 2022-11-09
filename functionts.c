@@ -11,9 +11,17 @@ int p_char(va_list char_list)
 
 int p_string(va_list str_list)
 {
-	int i = 0;
+	int i = 0, j = 0;
 	char *str = va_arg(str_list, char *);
+	char *nill = va_arg(str_list, char *);
 
+	while (str == NULL)
+	{
+		for (j = 0; nill[j] != '\0'; j++)
+		{
+			putchar(nill[j]);
+		}
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		putchar(str[i]);
