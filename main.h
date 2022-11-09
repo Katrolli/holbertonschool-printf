@@ -5,6 +5,8 @@
 int _printf(const char *format, ...);
 int p_char(va_list char_list);
 int p_string(va_list str_list);
+int p_int (int n);
+int change_int(va_list int_list);
 /**
  * struct new_struct - Structure
  *

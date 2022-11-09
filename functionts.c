@@ -31,6 +31,27 @@ int p_string(va_list str_list)
 	}
 	return (i);
 }
+
+int change_int(va_list int_list)
+{
+	int x = va_arg(int_list, int);
+	return (p_int(x));
+}
+
+int p_int (int n)
+{
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+	{
+		p_int(n / 10);
+	}
+	putchar(n % 10 + '0');
+	return (n);
+}
 /**
  * _printf -main function
  * @format: first parameter
@@ -39,7 +60,8 @@ int p_string(va_list str_list)
 int _printf(const char *format, ...)
 {
 	int i = 0, count = 0, j;
-	my_struct f_struct[] = {{"c", p_char}, {"s", p_string}, {NULL, NULL}};
+	my_struct f_struct[] = {{"c", p_char}, {"s", p_string}, {"i", change_int},
+		{"d", change_int}, {NULL, NULL}};
 	va_list args_list;
 
 	if (format == NULL)
@@ -54,7 +76,8 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == f_struct[j].type[0])
 					count += f_struct[j].f(args_list);
 			}
-			if (format[i + 1] != '\0' && format[i + 1] != 'c' && format[i + 1] != 's')
+			if (format[i + 1] != '\0' && format[i + 1] != 'c' && format[i + 1] != 's'
+			&& format[i + 1] == 'd' && format[i + 1] == 'i')
 			{
 				putchar(format[i]);
 				putchar(format[i + 1]);
