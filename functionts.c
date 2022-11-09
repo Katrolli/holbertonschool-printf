@@ -51,10 +51,18 @@ int _printf(const char *format, ...)
 				if (format [i + 1] == f_struct[j].type[0])
 				{
 					count += f_struct[j].f(args_list);
-					i++;
 				}
 				j++;
 			}
+			if (format[i + 1] != '\0' && format[i + 1] != 'c' && format[i + 1] != 's')
+			{	
+				putchar(format[i]);
+				putchar(format[i + 1]);
+				count += 2;
+			}
+			else if (format[i + 1] == '\0')
+				return (-1);
+			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
