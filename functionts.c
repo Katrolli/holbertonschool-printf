@@ -35,11 +35,13 @@ int p_string(va_list str_list)
 int change_int(va_list int_list)
 {
 	int x = va_arg(int_list, int);
-	return (p_int(x));
+
+	return (p_int(x, 1));
 }
 
-int p_int (int n)
+int p_int (int n, int count)
 {
+	int newCount = count;
 	if (n < 0)
 	{
 		putchar('-');
@@ -47,10 +49,10 @@ int p_int (int n)
 	}
 	if (n / 10)
 	{
-		p_int(n / 10);
+		newCount = p_int(n / 10, count + 1);
 	}
 	putchar(n % 10 + '0');
-	return (n);
+	return (newCount);
 }
 /**
  * _printf -main function
