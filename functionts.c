@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**
  * p_char -main function
  * @char_list: first parameter
@@ -31,7 +32,10 @@ int p_string(va_list str_list)
 	}
 	return (i);
 }
-
+/** 
+ * p_int - prints out an int
+ * @ap: action pointer to the numbers incoming
+ */
 int change_int(va_list int_list)
 {
 	long int x = va_arg(int_list, int);
@@ -47,11 +51,11 @@ int p_int (long int n, int count)
 	if (n < 0)
 	{
 		putchar('-');
-		n = n * (-1);
+		n = -n;
 	}
 	if (n / 10)
 	{
-		newCount = p_int(n / 10, count + 1);
+		newCount = p_int(n / 10, count + 1); 
 	}
 	putchar(n % 10 + '0');
 	return (newCount);
