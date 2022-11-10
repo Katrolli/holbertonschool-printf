@@ -76,8 +76,8 @@ int p_int(va_list ap)
 int _printf(const char *format, ...)
 {
 	int i = 0, count = 0, j;
-	my_struct f_struct[] = {{"c", p_char}, {"s", p_string}, {"i", change_int},
-		{"d", change_int}, {NULL, NULL}};
+	my_struct f_struct[] = {{"c", p_char}, {"s", p_string}, {"i", p_int},
+		{"d", p_int}, {NULL, NULL}};
 	va_list args_list;
 
 	if (format == NULL)
