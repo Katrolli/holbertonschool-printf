@@ -107,7 +107,6 @@ int _printf(const char *format, ...)
 			count += 1;
 		}
 	}
-	printf("count: %i\n", count);
 	va_end(args_list);
 	return (count);
 }
