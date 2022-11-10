@@ -34,18 +34,20 @@ int p_string(va_list str_list)
 
 int change_int(va_list int_list)
 {
-	int x = va_arg(int_list, int);
-
+	long int x = va_arg(int_list, int);
+	
+	if (x < 0)
+		return (p_int(x, 2));
 	return (p_int(x, 1));
 }
 
-int p_int (int n, int count)
+int p_int (long int n, int count)
 {
 	int newCount = count;
 	if (n < 0)
 	{
 		putchar('-');
-		n = -n;
+		n = n * (-1);
 	}
 	if (n / 10)
 	{
@@ -101,6 +103,7 @@ int _printf(const char *format, ...)
 			count += 1;
 		}
 	}
+	printf("count: %i\n", count);
 	va_end(args_list);
 	return (count);
 }

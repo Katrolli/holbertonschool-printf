@@ -2,10 +2,11 @@
 #define PRINTF_H
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 int _printf(const char *format, ...);
 int p_char(va_list char_list);
 int p_string(va_list str_list);
-int p_int (int n, int count);
+int p_int (long int n, int count);
 int change_int(va_list int_list);
 /**
  * struct new_struct - Structure
