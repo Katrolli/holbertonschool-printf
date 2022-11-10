@@ -38,21 +38,35 @@ int change_int(va_list int_list)
 
 	return (p_int(x, 1));
 }
-
-int p_int (int n, int count)
+/** 
+ * print_int - prints out an int
+ * @ap: action pointer to the numbers incoming
+ */
+int p_int(va_list ap)
 {
-	int newCount = count;
+	int n = va_arg(ap, int);
+	int i;
+	int print = 0;
+
 	if (n < 0)
 	{
-		putchar('-');
-		n = -n;
+		print += _putchar('-');
 	}
-	if (n / 10)
+ 	for (i = 1000000000; i > 0; i /= 10)
 	{
-		newCount = p_int(n / 10, count + 1);
+		if (n / i)
+ 		{
+		if ((n / i) % 10 < 0)
+			print += _putchar(-(n / i % 10) + '0');
+		else
+			print += _putchar((n / i % 10) + '0');
+		}
+		else if ( n / i == 0 && i == 1)
+		{
+			print += _putchar((n / i % 10) + '0');
+		}
 	}
-	putchar(n % 10 + '0');
-	return (newCount);
+		return (print);
 }
 /**
  * _printf -main function
