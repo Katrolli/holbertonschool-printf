@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
+ * _putchar - our good little friend
+ * @c: the character
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+/**
  * p_char -main function
  * @char_list: first parameter
  * Return: returns the sum
@@ -31,15 +39,8 @@ int p_string(va_list str_list)
 	}
 	return (i);
 }
-
-int change_int(va_list int_list)
-{
-	int x = va_arg(int_list, int);
-
-	return (p_int(x, 1));
-}
 /** 
- * print_int - prints out an int
+ * p_int - prints out an int
  * @ap: action pointer to the numbers incoming
  */
 int p_int(va_list ap)
