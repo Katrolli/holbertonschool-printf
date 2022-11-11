@@ -51,7 +51,7 @@ char *convert(unsigned int num, int base)
 }
 /**
  */
-int _print_binary(va_list ap)
+int print_binary(va_list ap)
 {
 	int i;
 	unsigned int n;
