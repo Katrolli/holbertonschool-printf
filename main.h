@@ -15,6 +15,7 @@ typedef struct structies
 	int (*f)(va_list ap);
 } p_struct;
 
+char *convert(unsigned int num, int base);
 int p_percent(va_list __attribute__((unused)) va);
 int _printf(const char *format, ...);
 int p_char(va_list ap);
