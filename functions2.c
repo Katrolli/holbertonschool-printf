@@ -47,7 +47,7 @@ char *convert(unsigned int num, int base)
 		*--ptr = R[num % base];
 		num /= base;
 	}
-	return (ptr);
+	return(void);
 }
 /**
  */
