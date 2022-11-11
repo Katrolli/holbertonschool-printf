@@ -15,6 +15,7 @@ typedef struct structies
 	int (*f)(va_list ap);
 } p_struct;
 
+int rot13(va_list ap);
 int print_rev(va_list ap);
 int print_binary(va_list ap);
 char *convert(unsigned int num, int base);
