@@ -32,22 +32,29 @@ int p_string(va_list str_list)
 	}
 	return (i);
 }
-/** 
- * p_int - prints out an int
- * @ap: action pointer to the numbers incoming
+/**
+ * change_int - prints out an int
+ * @int_list: action pointer to the numbers incoming
+ * Return: returns int
  */
 int change_int(va_list int_list)
 {
 	long int x = va_arg(int_list, int);
-	
+
 	if (x < 0)
 		return (p_int(x, 2));
 	return (p_int(x, 1));
 }
-
+/**
+ * p_int - prints int
+ * @n: int to print
+ * @count: len of int
+ * Return: return count
+ */
 int p_int (long int n, int count)
 {
 	int newCount = count;
+
 	if (n < 0)
 	{
 		putchar('-');
@@ -55,7 +62,7 @@ int p_int (long int n, int count)
 	}
 	if (n / 10)
 	{
-		newCount = p_int(n / 10, count + 1); 
+		newCount = p_int(n / 10, count + 1);
 	}
 	putchar(n % 10 + '0');
 	return (newCount);
@@ -87,9 +94,8 @@ int _printf(const char *format, ...)
 			if (format[i + 1] != '\0' && format[i + 1] != 'c' && format[i + 1] != 's'
 			&& format[i + 1] == 'd' && format[i + 1] == 'i')
 			{
-				putchar(format[i]);
-				putchar(format[i + 1]);
-				count += 2;
+				count += _putchar(format[i]);
+				count += _putchar(format[i + 1]);
 			}
 			else if (format[i + 1] == '\0')
 				return (-1);
@@ -97,15 +103,11 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
-			putchar('%');
-			count += 1;
+			count += _putchar('%');
 			i++;
 		}
 		else
-		{
-			putchar(format[i]);
-			count += 1;
-		}
+			count += _putchar(format[i]);
 	}
 	va_end(args_list);
 	return (count);
