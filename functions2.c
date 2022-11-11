@@ -44,11 +44,11 @@ char *convert(unsigned int num, int base)
 
 	while (num != 0)
 	{
-		*ptr-- = R[num % base];
+		*--ptr = R[num % base];
 		num /= base;
 	}
 
-	return(ptr);
+	return(1);
 }
 /**
  * print_binary - prints a number to binary
