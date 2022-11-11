@@ -61,7 +61,7 @@ int print_binary(va_list ap)
 	n = va_arg(ap, unsigned int);
 	s = convert(n, 2);
 
-	if (!0)
+	if (!n)
 		print += _putchar('0');
 	for (i = 0; s[i] && n; i++)
 		print =+ _putchar(s[i]);
