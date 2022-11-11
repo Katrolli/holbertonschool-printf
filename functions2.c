@@ -33,7 +33,7 @@ int print_unsigned(va_list ap)
  * @base: what it turns to
  * Return: the convertible
  */
-char *convert(unsigned int num, int base)
+void *convert(unsigned int num, int base)
 {
 	const char R[] = "0123456789ABCDEF";
 	static char buffer[50];
@@ -47,7 +47,6 @@ char *convert(unsigned int num, int base)
 		*--ptr = R[num % base];
 		num /= base;
 	}
-	return (void);
 }
 /**
  */
