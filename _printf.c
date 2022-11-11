@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{"i", p_int},
 		{"u", print_unsigned},
 		{"b", print_binary},
+		{"r", print_rev},
 		{NULL, NULL}
 	};
 	va_list(ap);

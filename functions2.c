@@ -33,7 +33,7 @@ int print_unsigned(va_list ap)
  * @base: what it turns to
  * Return: buffer
  */
-int convert(unsigned int num, int base)
+char *convert(unsigned int num, int base)
 {
 	const char R[] = "0123456789ABCDEF";
 	static char buffer[50];
@@ -48,7 +48,7 @@ int convert(unsigned int num, int base)
 		num /= base;
 	}
 
-	return(1);
+	return(ptr);
 }
 /**
  * print_binary - prints a number to binary
@@ -71,4 +71,28 @@ int print_binary(va_list ap)
 		print =+ _putchar(s[i]);
 
 	return(print);
+}
+/**
+ * print_rev - prints a string in reverse
+ * @ap: action pointer
+ * Return: length
+ */
+int print_rev(va_list ap)
+{
+	int len = 0;
+	int i;
+	char *c;
+
+	c = va_arg(ap, char *);
+	
+	if (!s)
+		s = "(null)";
+	while (s[len])
+		len++;
+	i = len - 1;
+	while (i >= 0)
+	{
+		_putchar(s[i--]);
+	}
+	return len;
 }
