@@ -33,7 +33,7 @@ int print_unsigned(va_list ap)
  * @base: what it turns to
  * Return: buffer
  */
-char *convert(unsigned int num, int base)
+int convert(unsigned int num, int base)
 {
 	const char R[] = "0123456789ABCDEF";
 	static char buffer[50];
