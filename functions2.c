@@ -87,12 +87,12 @@ int print_rev(va_list ap)
 	
 	if (!s)
 		s = "(null)";
-	while (s[len])
+	while (c[len])
 		len++;
 	i = len - 1;
 	while (i >= 0)
 	{
-		_putchar(s[i--]);
+		_putchar(c[i--]);
 	}
-	return len;
+	return (len);
 }
