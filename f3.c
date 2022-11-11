@@ -20,7 +20,7 @@ int rot13(va_list ap)
 	{
 		for (j = 0; alphabet[j]; j++)
 		{
-			if (alpahbet[j] == s[i])
+			if (alphabet[j] == s[i])
 			{
 				_putchar (rotphabet[j]);
 				break;
@@ -29,5 +29,5 @@ int rot13(va_list ap)
 		if (!alphabet[j])
 			_putchar(s[i]);
 	}
-	return (i)
+	return (i);
 }
