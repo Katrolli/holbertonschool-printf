@@ -31,9 +31,9 @@ int print_unsigned(va_list ap)
  * convert - converts from anything
  * @num: the entriant
  * @base: what it turns to
- * Return: the convertible
+ * Return: buffer
  */
-void *convert(unsigned int num, int base)
+char *convert(unsigned int num, int base)
 {
 	const char R[] = "0123456789ABCDEF";
 	static char buffer[50];
@@ -47,8 +47,13 @@ void *convert(unsigned int num, int base)
 		*--ptr = R[num % base];
 		num /= base;
 	}
+
+	return(ptr);
 }
 /**
+ * print_binary - prints a number to binary
+ * @ap: action pointer
+ * Return: the number in binary
  */
 int print_binary(va_list ap)
 {
