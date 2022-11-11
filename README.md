@@ -4,7 +4,7 @@ Recreating the printf function used in C programming language.
 ## Description
 
 _printf is used when the user wants to print to standard output. Currently this function supports only
-char , string and int printing. It takes placeholder to check the type of the variable to print and takes the value of the variable itself and prints it to standard output.
+char , string and int printing. It takes a placeholder to check the type of the variable to print and takes the value of the variable itself and prints it to standard output.
 
 
 ## Usage
