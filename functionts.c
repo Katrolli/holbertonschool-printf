@@ -11,7 +11,7 @@ int p_char(va_list char_list)
 {
 	char c = va_arg(char_list, int);
 
-	putchar(c);
+	_putchar(c);
 	return (1);
 }
 /**
@@ -28,7 +28,7 @@ int p_string(va_list str_list)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 	}
 	return (i);
 }
@@ -57,14 +57,14 @@ int p_int (long int n, int count)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n = -n;
 	}
 	if (n / 10)
 	{
 		newCount = p_int(n / 10, count + 1);
 	}
-	putchar(n % 10 + '0');
+	_putchar(n % 10 + '0');
 	return (newCount);
 }
 /**

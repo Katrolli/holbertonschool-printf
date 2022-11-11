@@ -9,15 +9,15 @@
 int main(void)
 {
 
+
 	int len, len2;
 
-
-	len = _printf("%d", INT_MIN);
-	len2 = printf("%d", INT_MIN);
+	len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
+	len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
 	fflush(stdout);
 	if (len != len2)
 	{
-		printf("\n%d\n%d\n", len, len2);
+		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
 	}
