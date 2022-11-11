@@ -85,7 +85,7 @@ int print_rev(va_list ap)
 
 	c = va_arg(ap, char *);
 	
-	if (!s)
+	if (!c)
 		s = "(null)";
 	while (c[len])
 		len++;
