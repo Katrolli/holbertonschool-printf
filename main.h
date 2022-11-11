@@ -1,24 +1,28 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+/*
+ * structies - struct
+ * @parameter: the parameters
+ * @f: the found function
+ */
+typedef struct structies
+{
+	char *parameter;
+	int (*f)(va_list ap);
+} p_struct;
+
+int p_percent(va_list __attribute__((unused)) va);
 int _printf(const char *format, ...);
-int p_char(va_list char_list);
-int p_string(va_list str_list);
-int change_int(va_list int_list);
+int p_char(va_list ap);
+int p_string(va_list ap);
 int p_int(va_list ap);
 int _putchar(char c);
-/**
- * struct new_struct - Structure
- *
- * @type: The character
- * @f: The function associated
- */
-typedef struct new_struct
-{
-	char *type;
-	int (*f)(va_list arg);
-} my_struct;
+int print_unsigned(va_list ap);
+int _printf(const char *format, ...);
+int counts(const char *format, p_struct argument[], va_list ap);
+
 #endif

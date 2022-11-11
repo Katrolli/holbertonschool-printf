@@ -1,0 +1,16 @@
+.\" Our _printf clone
+.SH NAME
+_printf \- its the same as the regular printf, but spun around, WIP
+.SH SYNOPSIS
+int _printf(const char *format, ...)
+.SH OPTIONS
+Works like the regular printf when called, it prints any datatype entered
+.SH EXAMPLES
+_printf("Printing a string: %s", string);
+This will print out a string
+.SH BUGS
+This is still incomplet as of this moment
+.Sh AUTHOR
+Ennio Cano(ennio_cano@live.com)
+Denio Shehu(shehuden22@yahoo.com)
+
